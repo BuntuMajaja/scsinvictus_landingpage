@@ -1,0 +1,1057 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SCS-Invictus South Africa | Professional Accounting & Consulting Services</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: rgba(30, 58, 138, 0.95);
+            color: white;
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+
+        .contact-info {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+            transition: color 0.3s ease;
+        }
+
+        .contact-item:hover {
+            color: #60a5fa;
+        }
+
+        .contact-item i {
+            color: #60a5fa;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, rgba(30, 58, 138, 0.9) 0%, rgba(59, 130, 246, 0.8) 50%, rgba(96, 165, 250, 0.7) 100%), url('website_assets/hero_meeting.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: white;
+            padding: 140px 0 100px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(30, 58, 138, 0.3);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            line-height: 1.1;
+            letter-spacing: -2px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .hero .subtitle {
+            font-size: 1.4rem;
+            margin-bottom: 3rem;
+            opacity: 0.95;
+            font-weight: 300;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .mission-vision {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin-top: 4rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .mission-card, .vision-card {
+            background: rgba(255,255,255,0.15);
+            padding: 2.5rem;
+            border-radius: 20px;
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255,255,255,0.3);
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+        }
+
+        .mission-card:hover, .vision-card:hover {
+            transform: translateY(-10px);
+            background: rgba(255,255,255,0.2);
+        }
+
+        .mission-card h3, .vision-card h3 {
+            font-size: 1.6rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            font-weight: 600;
+        }
+
+        /* About Section */
+        .about {
+            padding: 100px 0;
+            background: #f8fafc;
+            position: relative;
+        }
+
+        .about::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 100px;
+            background: linear-gradient(to bottom, rgba(248,250,252,0) 0%, rgba(248,250,252,1) 100%);
+            z-index: 1;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            color: #1e293b;
+            letter-spacing: -1px;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            color: #64748b;
+            margin-bottom: 4rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            font-weight: 400;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5rem;
+            align-items: center;
+            margin-top: 4rem;
+        }
+
+        .about-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #475569;
+        }
+
+        .about-text p {
+            margin-bottom: 1.5rem;
+        }
+
+        .about-image {
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+        }
+
+        .about-image img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .about-image:hover img {
+            transform: scale(1.05);
+        }
+
+        .global-stats {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            margin-top: 4rem;
+        }
+
+        .stat-card {
+            background: white;
+            padding: 2.5rem 1.5rem;
+            border-radius: 16px;
+            text-align: center;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+            border: 1px solid #e2e8f0;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 800;
+            color: #3b82f6;
+            margin-bottom: 0.5rem;
+            line-height: 1;
+        }
+
+        .stat-label {
+            color: #64748b;
+            font-weight: 500;
+            font-size: 0.9rem;
+        }
+
+        /* Services Section */
+        .services {
+            padding: 100px 0;
+            background: white;
+            position: relative;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+            margin-top: 4rem;
+        }
+
+        .service-card {
+            background: #f8fafc;
+            padding: 3rem;
+            border-radius: 20px;
+            border: 1px solid #e2e8f0;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, #3b82f6, #60a5fa);
+            transform: scaleX(0);
+            transition: transform 0.4s ease;
+        }
+
+        .service-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .service-card:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.15);
+            border-color: #3b82f6;
+            background: white;
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            color: #3b82f6;
+            margin-bottom: 2rem;
+            transition: transform 0.3s ease;
+        }
+
+        .service-card:hover .service-icon {
+            transform: scale(1.1);
+        }
+
+        .service-card h3 {
+            font-size: 1.6rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: #1e293b;
+        }
+
+        .service-list {
+            list-style: none;
+            margin-top: 1.5rem;
+        }
+
+        .service-list li {
+            padding: 0.8rem 0;
+            color: #475569;
+            display: flex;
+            align-items: flex-start;
+            gap: 0.8rem;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .service-list li::before {
+            content: '✓';
+            color: #10b981;
+            font-weight: bold;
+            margin-top: 2px;
+            font-size: 1.1rem;
+        }
+
+        /* Team Section */
+        .team {
+            padding: 100px 0;
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            position: relative;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
+            margin-top: 4rem;
+        }
+
+        .team-member {
+            background: white;
+            padding: 3rem 2rem;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+            border: 1px solid #e2e8f0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .team-member::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #3b82f6, #60a5fa);
+        }
+
+        .team-member:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+        }
+
+        .member-avatar {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #3b82f6, #60a5fa);
+            margin: 0 auto 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            color: white;
+            font-weight: 700;
+            box-shadow: 0 8px 30px rgba(59, 130, 246, 0.3);
+        }
+
+        .member-name {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: #1e293b;
+        }
+
+        .member-title {
+            color: #3b82f6;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            font-size: 1rem;
+        }
+
+        .coming-soon {
+            background: linear-gradient(135deg, #fef3c7, #fde68a);
+            border: 2px dashed #f59e0b;
+            color: #92400e;
+        }
+
+        .coming-soon .member-avatar {
+            background: linear-gradient(135deg, #f59e0b, #fbbf24);
+            box-shadow: 0 8px 30px rgba(245, 158, 11, 0.3);
+        }
+
+        .coming-soon-text {
+            font-style: italic;
+            color: #92400e;
+            margin-top: 1.5rem;
+            line-height: 1.6;
+            font-size: 0.95rem;
+        }
+
+        /* South African Connection Section */
+        .south-africa-section {
+            padding: 100px 0;
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            position: relative;
+        }
+
+        .sa-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5rem;
+            align-items: center;
+        }
+
+        .sa-highlights {
+            margin-top: 3rem;
+        }
+
+        .sa-highlight {
+            display: flex;
+            gap: 1.5rem;
+            margin-bottom: 2.5rem;
+            align-items: flex-start;
+        }
+
+        .sa-icon {
+            background: linear-gradient(135deg, #3b82f6, #60a5fa);
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            flex-shrink: 0;
+            box-shadow: 0 8px 30px rgba(59, 130, 246, 0.3);
+        }
+
+        .sa-highlight-content h3 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 0.8rem;
+            color: #1e293b;
+        }
+
+        .sa-highlight-content p {
+            color: #475569;
+            line-height: 1.6;
+            font-size: 1rem;
+        }
+
+        .sa-image {
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+        }
+
+        .sa-image img {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .sa-image:hover img {
+            transform: scale(1.05);
+        }
+
+        .sa-image-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0,0,0,0.8));
+            color: white;
+            padding: 2rem 1.5rem 1.5rem;
+            text-align: center;
+        }
+
+        .sa-image-caption p {
+            font-size: 1rem;
+            font-weight: 500;
+            margin: 0;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 100px 0;
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 50%, #60a5fa 100%), url('website_assets/office_building.jpg');
+            background-size: cover;
+            background-position: center;
+            background-blend-mode: overlay;
+            color: white;
+            text-align: center;
+            position: relative;
+        }
+
+        .contact::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(30, 58, 138, 0.8);
+        }
+
+        .contact-content {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        .contact-info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin: 4rem 0;
+        }
+
+        .contact-card {
+            background: rgba(255,255,255,0.15);
+            padding: 3rem 2rem;
+            border-radius: 16px;
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255,255,255,0.3);
+            transition: all 0.3s ease;
+        }
+
+        .contact-card:hover {
+            transform: translateY(-5px);
+            background: rgba(255,255,255,0.2);
+        }
+
+        .contact-card i {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: #60a5fa;
+        }
+
+        .contact-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: white;
+            color: #3b82f6;
+            padding: 1.2rem 3rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            margin-top: 3rem;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+            background: #f8fafc;
+        }
+
+        /* Footer */
+        footer {
+            background: #1e293b;
+            color: white;
+            padding: 3rem 0;
+            text-align: center;
+        }
+
+        .footer-content {
+            border-top: 1px solid #334155;
+            padding-top: 2rem;
+            color: #94a3b8;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .mission-vision {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .global-stats {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .contact-info {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .contact-info-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .header-content {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .sa-content {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .sa-image img {
+                height: 300px;
+            }
+
+            .section-title {
+                font-size: 2.2rem;
+            }
+        }
+
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Parallax effect */
+        .parallax {
+            background-attachment: fixed;
+        }
+
+        @media (max-width: 768px) {
+            .parallax {
+                background-attachment: scroll;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">SCS-Invictus South Africa</div>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>info@scsinvictus.co.za</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <span>(+27) 087 821 3944</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero parallax">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Professional Accounting & Consulting Services</h1>
+                <p class="subtitle">Bridging Japan and South Africa through expert financial solutions and global expertise</p>
+                
+                <div class="mission-vision">
+                    <div class="mission-card">
+                        <h3><i class="fas fa-handshake"></i> Our Mission</h3>
+                        <p>ONE TEAM, NO BORDER</p>
+                    </div>
+                    <div class="vision-card">
+                        <h3><i class="fas fa-globe"></i> Our Vision</h3>
+                        <p>Contributing to the sustainable prosperity of both Japan and South Africa by becoming a bridge between the two nations.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <h2 class="section-title">About SCS-Invictus South Africa</h2>
+            <p class="section-subtitle">Part of a global network delivering excellence in accounting, tax, and consulting services across 19 countries</p>
+            
+            <div class="about-content">
+                <div class="about-text">
+                    <p>SCS-Invictus South Africa (Pty) Ltd is the newest addition to the SCS-Invictus Holdings global network, bringing world-class accounting and consulting services to the South African market. As part of an international group founded in 2002, we combine local expertise with global best practices.</p>
+                    
+                    <p>Our team specializes in serving Japanese companies operating in South Africa, providing comprehensive accounting, tax, consulting, and outsourcing services that ensure compliance with local regulations while maintaining international standards.</p>
+
+                    <p>With our parent company SCS-Invictus Holdings Pte Ltd based in Singapore, we offer seamless international support and deep understanding of cross-border business operations.</p>
+                </div>
+                
+                <div class="about-image">
+                    <img src="website_assets/modern_office.jpg" alt="Modern office environment">
+                </div>
+            </div>
+
+            <div class="global-stats">
+                <div class="stat-card">
+                    <div class="stat-number">19</div>
+                    <div class="stat-label">Countries</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">2000+</div>
+                    <div class="stat-label">Clients Worldwide</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">20+</div>
+                    <div class="stat-label">Years Experience</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">100%</div>
+                    <div class="stat-label">Compliance Focus</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="container">
+            <h2 class="section-title">Our Services</h2>
+            <p class="section-subtitle">Comprehensive financial solutions tailored to your business needs with international expertise</p>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-calculator"></i>
+                    </div>
+                    <h3>Accounting Services</h3>
+                    <ul class="service-list">
+                        <li>Accounting advisory services for Japanese clients</li>
+                        <li>Full accounting function management</li>
+                        <li>Financial statements preparation (IFRS & IFRS for SMEs)</li>
+                        <li>Consolidated reporting support</li>
+                        <li>Year-end financial audit assistance</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-file-invoice-dollar"></i>
+                    </div>
+                    <h3>Tax Services</h3>
+                    <ul class="service-list">
+                        <li>Tax computations (VAT, PAYE, corporate taxes)</li>
+                        <li>SARS compliance and filing</li>
+                        <li>Expatriate personal income tax</li>
+                        <li>Tax advisory and planning</li>
+                        <li>International tax compliance</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Consulting Services</h3>
+                    <ul class="service-list">
+                        <li>Corporate governance advisory</li>
+                        <li>Sustainability consulting (ESG)</li>
+                        <li>Internal control advisory</li>
+                        <li>Budgeting and forecasting</li>
+                        <li>Risk management solutions</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-users-cog"></i>
+                    </div>
+                    <h3>Outsourcing Services</h3>
+                    <ul class="service-list">
+                        <li>Payroll processing and compliance</li>
+                        <li>Bookkeeping outsourcing</li>
+                        <li>Labor law compliance</li>
+                        <li>Administrative support</li>
+                        <li>Process optimization</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="team" id="team">
+        <div class="container">
+            <h2 class="section-title">Our Leadership Team</h2>
+            <p class="section-subtitle">Experienced professionals committed to excellence and international best practices</p>
+            
+            <div class="team-grid">
+                <div class="team-member">
+                    <div class="member-avatar">DH</div>
+                    <div class="member-name">Daisuke Hora</div>
+                    <div class="member-title">Director</div>
+                </div>
+
+                <div class="team-member">
+                    <div class="member-avatar">BM</div>
+                    <div class="member-name">Buntu Majaja</div>
+                    <div class="member-title">Director</div>
+                </div>
+
+                <div class="team-member">
+                    <div class="member-avatar">SM</div>
+                    <div class="member-name">Seiya Matsumoto</div>
+                    <div class="member-title">Associate Senior Accountant</div>
+                </div>
+
+                <div class="team-member coming-soon">
+                    <div class="member-avatar"><i class="fas fa-plus"></i></div>
+                    <div class="member-name">Junior Accountant</div>
+                    <div class="member-title">Coming Soon</div>
+                    <div class="coming-soon-text">We are looking for talented South Africans to join our growing accounting team. Opportunity to work with a global firm and gain valuable experience.</div>
+                </div>
+
+                <div class="team-member coming-soon">
+                    <div class="member-avatar"><i class="fas fa-plus"></i></div>
+                    <div class="member-name">Junior Accountant</div>
+                    <div class="member-title">Coming Soon</div>
+                    <div class="coming-soon-text">We are looking for talented South Africans to join our growing accounting team. Opportunity to work with a global firm and gain valuable experience.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- South African Connection Section -->
+    <section class="south-africa-section">
+        <div class="container">
+            <div class="sa-content">
+                <div class="sa-text">
+                    <h2 class="section-title">Our South African Connection</h2>
+                    <p class="section-subtitle">Proudly established in the heart of South Africa, bridging global expertise with local knowledge</p>
+                    
+                    <div class="sa-highlights">
+                        <div class="sa-highlight">
+                            <div class="sa-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="sa-highlight-content">
+                                <h3>Local Presence</h3>
+                                <p>Established in South Africa to serve the growing Japanese business community and local enterprises seeking international expertise.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="sa-highlight">
+                            <div class="sa-icon">
+                                <i class="fas fa-handshake"></i>
+                            </div>
+                            <div class="sa-highlight-content">
+                                <h3>Cultural Bridge</h3>
+                                <p>Our team understands both South African business culture and Japanese corporate practices, ensuring seamless cross-cultural collaboration.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="sa-highlight">
+                            <div class="sa-icon">
+                                <i class="fas fa-balance-scale"></i>
+                            </div>
+                            <div class="sa-highlight-content">
+                                <h3>Local Compliance</h3>
+                                <p>Deep expertise in South African regulations, SARS requirements, and local business practices combined with international standards.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="sa-image">
+                    <img src="website_assets/johannesburg_skyline.jpg" alt="Johannesburg Skyline - South Africa's Economic Hub">
+                    <div class="sa-image-caption">
+                        <p>Johannesburg - Where global expertise meets South African excellence</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact parallax" id="contact">
+        <div class="container">
+            <div class="contact-content">
+                <h2 class="section-title" style="color: white;">Get In Touch</h2>
+                <p class="section-subtitle" style="color: rgba(255,255,255,0.9);">Ready to partner with us? Contact our team today for professional accounting and consulting services</p>
+                
+                <div class="contact-info-grid">
+                    <div class="contact-card">
+                        <i class="fas fa-envelope"></i>
+                        <h3>Email Us</h3>
+                        <p>info@scsinvictus.co.za</p>
+                    </div>
+                    <div class="contact-card">
+                        <i class="fas fa-phone"></i>
+                        <h3>Call Us</h3>
+                        <p>(+27) 087 821 3944</p>
+                    </div>
+                </div>
+                
+                <a href="mailto:info@scsinvictus.co.za" class="cta-button">
+                    <i class="fas fa-envelope"></i> Contact Us Today
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2025 SCS-Invictus South Africa (Pty) Ltd. Part of SCS-Invictus Holdings Pte Ltd global network.</p>
+                <p style="margin-top: 0.5rem; font-size: 0.9rem;">10 Anson Road, #14-06 International Plaza, Singapore 079903</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Fade in animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        // Add fade-in class to elements and observe them
+        document.querySelectorAll('.service-card, .team-member, .stat-card, .about-text, .about-image, .sa-highlight, .sa-image').forEach(el => {
+            el.classList.add('fade-in');
+            observer.observe(el);
+        });
+
+        // Header background change on scroll
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(30, 58, 138, 0.98)';
+            } else {
+                header.style.background = 'rgba(30, 58, 138, 0.95)';
+            }
+        });
+
+        // Parallax effect for hero and contact sections
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const parallaxElements = document.querySelectorAll('.parallax');
+            
+            parallaxElements.forEach(element => {
+                const speed = 0.5;
+                element.style.transform = `translateY(${scrolled * speed}px)`;
+            });
+        });
+    </script>
+</body>
+</html>
+
