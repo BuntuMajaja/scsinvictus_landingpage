@@ -1,4 +1,4 @@
-import { Button } from '@components/ui/button.jsx'
+import { Button } from './components/ui/button.jsx'
 import { Mail, Phone, Globe, Users, TrendingUp, Shield, Calculator, FileText } from 'lucide-react'
 import accountingFirmImg from './assets/accounting_firm.jpg'
 import globalNetworkImg from './assets/global_network.jpg'
